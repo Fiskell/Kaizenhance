@@ -18,8 +18,7 @@ export const App = React.createClass({
 
 function mapStateToProps(state) {
     return {
-        things: state.stuff,
-
+        things: state.main.get('stuff'),
     };
 }
 
