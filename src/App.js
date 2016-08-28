@@ -7,7 +7,7 @@ export const App = React.createClass({
     return (
       <div className="App">
         <div className="App-header">
-        hey
+          {this.props.things}
         </div>
         <div className="App-container">
         </div>
