@@ -1,8 +1,17 @@
-export default function main(state = [], action) {
+import { Map } from 'immutable';
+
+function setState(state, newState) {
+  return state.merge(newState);
+}
+
+export default function main(state = Map(), action) {
   switch (action.type) {
-    case 'ADD_TODO':
-        console.log('here', state);
-      return state.concat([ action.text ])
+    case 'INIT':
+      console.log('here', action.state);
+      return setState(state, action.state);
+    case 'PRINT':
+      console.log('state', state);
+      return state;
     default:
       return state
   }

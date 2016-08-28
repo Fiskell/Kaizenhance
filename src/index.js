@@ -9,10 +9,18 @@ import './index.css';
 
 const store = createStore(reducer);
 
+const init_state = {
+  stuff: [1,2,3,4]
+};
+
 store.dispatch({
-  type: 'ADD_TODO',
-  text: 'Use Redux'
-})
+  type: 'INIT',
+  state: init_state
+});
+
+store.dispatch({
+  type: 'PRINT'
+});
 
 render((
   <Provider store={store}>
