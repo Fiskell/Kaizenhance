@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Goals } from './goals';
 import './App.css';
 
 export const App = React.createClass({
@@ -10,6 +11,7 @@ export const App = React.createClass({
           {this.props.things}
         </div>
         <div className="App-container">
+          <Goals {...this.props} />
         </div>
       </div>
     );
