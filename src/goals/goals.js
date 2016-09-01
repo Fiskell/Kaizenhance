@@ -28,7 +28,6 @@ export default React.createClass({
     const goalItems = goals.map(function(goal) {
       return <li>{goal.name}</li>;
     });
-    console.log('goals', goals);
     return (
       <div>
         <input name='goal-name-input' value={this.state.goalName} onChange={this.handleInputChange}/>

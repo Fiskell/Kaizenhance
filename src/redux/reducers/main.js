@@ -13,9 +13,13 @@ export default function main(state = Map(), action) {
       console.log('state', state);
       return state;
     case 'ADD_GOAL':
-      state.update('goalName', {}, arr => 'yay');
-      state.update('goals', {}, list => list.push({name: action.value}));
-      console.log('hey', state);
+      console.log('hey', state.get('goalName'));
+      state.update('goalName', {}, value => 'yay')
+      .update('goals', list => list.push(action.value));
+//      state.update('goals', {}, list => list.push({name: action.value}));
+      console.log('hey', state.get('goalName'));
+      console.log('goals', state.get('goals'));
+      return state;
     default:
       return state
   }
