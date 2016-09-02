@@ -8,8 +8,7 @@ export default React.createClass({
     });
   },
   render(){
-    const { goals } = this.props;
-    const goalItems = goals.map(function(goal, index) {
+    const goalItems = this.props.goals.map(function(goal, index) {
       return <li key={index}><span>{goal.name}</span><button onClick={() => this.handleRemoveGoal(index)}>x</button></li>;
     }, this);
     return (
