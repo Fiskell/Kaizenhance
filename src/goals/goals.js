@@ -15,7 +15,6 @@ export default React.createClass({
     this.setState({goalName: event.target.value});
   },
   handleRemoveGoal(index) {
-    console.log('asdf', index);
     this.props.dispatch({
       type: 'REMOVE_GOAL',
       value: index
