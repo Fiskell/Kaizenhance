@@ -18,8 +18,15 @@ export default React.createClass({
   render() {
     return (
       <div>
-        <input name='goal-name-input' value={this.state.goalName} onChange={this.handleInputChange}/>
-        <input onClick={this.handleAddGoal} type='button' value="Add"/>
+        <input name='goal-name-input'
+          placeholder="Goal Name"
+          value={this.state.goalName}
+          onChange={this.handleInputChange}/>
+
+        <input onClick={this.handleAddGoal}
+          type='button'
+          value="Add"/>
+
         <GoalList {...this.props}/>
       </div>
     );
