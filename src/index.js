@@ -10,8 +10,6 @@ import './index.css';
 const store = createStore(reducer);
 
 const init_state = {
-  stuff: [1,2,3,4],
-  goalName: '',
   goals: [],
 };
 

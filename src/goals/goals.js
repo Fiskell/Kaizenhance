@@ -4,16 +4,7 @@ export default React.createClass({
   getInitialState() {
     return {goalName: ''};
   },
-  componentDidMount() {
-    this.props.dispatch({
-      type: 'INIT',
-      state: {
-        goalName: '',
-        goals: []
-    }});
-  },
   handleAddGoal(event) {
-//    console.log(this.state.goalName);
     this.props.dispatch({
       type: 'ADD_GOAL',
       value: this.state.goalName

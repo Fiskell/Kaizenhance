@@ -20,7 +20,6 @@ export const App = React.createClass({
 
 function mapStateToProps(state) {
     return {
-        things: state.main.get('stuff'),
         goals: state.main.get('goals'),
     };
 }
