@@ -14,6 +14,8 @@ export default function main(state = Map(), action) {
       return state;
     case 'ADD_GOAL':
       return state.update('goals', list => list.push({name: action.value}));
+    case 'REMOVE_GOAL':
+      return state.update('goals', list => list.delete(action.value));
     default:
       return state
   }
