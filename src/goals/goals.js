@@ -1,5 +1,5 @@
 import React from 'react';
-import GoalList from 'goal-list';
+import { GoalList } from './goal-list';
 
 export default React.createClass({
   getInitialState() {
