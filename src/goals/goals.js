@@ -1,4 +1,5 @@
 import React from 'react';
+import GoalList from 'goal-list';
 
 export default React.createClass({
   getInitialState() {
@@ -14,22 +15,12 @@ export default React.createClass({
   handleInputChange(event) {
     this.setState({goalName: event.target.value});
   },
-  handleRemoveGoal(index) {
-    this.props.dispatch({
-      type: 'REMOVE_GOAL',
-      value: index
-    });
-  },
   render() {
-    const goals = this.props.goals;
-    const goalItems = goals.map(function(goal, index) {
-      return <li key={index}><span>{goal.name}</span><button onClick={() => this.handleRemoveGoal(index)}>x</button></li>;
-    }, this);
     return (
       <div>
         <input name='goal-name-input' value={this.state.goalName} onChange={this.handleInputChange}/>
         <input onClick={this.handleAddGoal} type='button' value="Add"/>
-        <ul>{ goalItems }</ul>
+        <GoalList {...this.props}/>
       </div>
     );
   }
