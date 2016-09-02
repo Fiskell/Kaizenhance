@@ -14,8 +14,7 @@ export default React.createClass({
           <button onClick={() => this.handleRemoveGoal(index)}>x</button>
         </li>;
     }, this);
-    return (
-      <ul>{goalItems}</ul>
-    );
+
+    return (<ul>{goalItems}</ul>);
   }
 })
