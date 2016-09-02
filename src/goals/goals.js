@@ -13,7 +13,7 @@ export default React.createClass({
     }});
   },
   handleAddGoal(event) {
-    console.log(this.state.goalName);
+//    console.log(this.state.goalName);
     this.props.dispatch({
       type: 'ADD_GOAL',
       value: this.state.goalName
@@ -25,8 +25,8 @@ export default React.createClass({
   },
   render() {
     const goals = this.props.goals;
-    const goalItems = goals.map(function(goal) {
-      return <li>{goal.name}</li>;
+    const goalItems = goals.map(function(goal, index) {
+      return <li key={index}>{goal.name}</li>;
     });
     return (
       <div>
