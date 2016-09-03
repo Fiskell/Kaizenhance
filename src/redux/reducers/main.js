@@ -13,6 +13,9 @@ export default function main(state = Map(), action) {
       console.log('state', state);
       return state;
     case 'ADD_GOAL':
+      if(state.get('goals').count() == 3) {
+        return state;
+      }
       return state.update('goals', list => list.push({name: action.value}));
     case 'REMOVE_GOAL':
       return state.update('goals', list => list.delete(action.value));
